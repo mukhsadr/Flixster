@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_play"
+        android:icon="@drawable/ic_play"
+        android:title="Playing"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_trend"
+        android:icon="@drawable/ic_trending"
+        android:title="Trending" />
+    <item
+        android:id="@+id/action_upcome"
+        android:icon="@drawable/ic_upcoming"
+        android:title="Upcoming"
+        app:showAsAction="always" />
+</menu>

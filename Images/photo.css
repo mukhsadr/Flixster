@@ -1,0 +1,858 @@
+/* Splash Photo */
+
+position: absolute;
+width: 350.37px;
+height: 460px;
+left: 20px;
+top: 134px;
+
+
+
+/* photo 3 */
+
+position: absolute;
+width: 225px;
+height: 414px;
+left: 126.63px;
+top: 9.3px;
+
+transform: rotate(6.05deg);
+
+
+/* Ticket */
+
+position: absolute;
+width: 225.2px;
+height: 414.37px;
+left: 43.63px;
+top: 0px;
+
+transform: rotate(6.05deg);
+
+
+/* Stroke */
+
+position: absolute;
+width: 225.2px;
+height: 414.37px;
+left: 43.63px;
+top: 0px;
+
+border: 1.73458px solid rgba(255, 255, 255, 0.3);
+transform: rotate(6.05deg);
+
+
+/* Base */
+
+position: absolute;
+width: 225.2px;
+height: 414.37px;
+left: 43.63px;
+top: 0px;
+
+background: #C4C4C4;
+transform: rotate(6.05deg);
+
+
+/* Image */
+
+position: absolute;
+width: 225.2px;
+height: 414.37px;
+left: 43.63px;
+top: 0px;
+
+background: url(Scarlet_Witch.png);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 663 */
+
+position: absolute;
+visibility: hidden;
+width: 225.2px;
+height: 118.91px;
+left: 12.49px;
+top: 293.82px;
+
+background: rgba(255, 255, 255, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Separator */
+
+position: absolute;
+visibility: hidden;
+width: 180.16px;
+height: 0px;
+left: 35.59px;
+top: 298.08px;
+
+border: 1.8016px dashed rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Bottom Card */
+
+position: absolute;
+visibility: hidden;
+width: 225.2px;
+height: 118.91px;
+left: 12.49px;
+top: 293.82px;
+
+transform: rotate(6.05deg);
+
+
+/* Frame 16 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 9.01px;
+
+position: absolute;
+width: 166.02px;
+height: 97.25px;
+left: 40.95px;
+top: 13.88px;
+
+transform: rotate(6.05deg);
+
+
+/* Frame 15 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 18.02px;
+
+width: 166.02px;
+height: 45.01px;
+
+transform: rotate(6.05deg);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Frame 13 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 9.01px;
+
+width: 77px;
+height: 45.01px;
+
+transform: rotate(6.05deg);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Date: April 23 */
+
+width: 77px;
+height: 18px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 11.7104px;
+line-height: 18px;
+/* identical to box height */
+text-align: center;
+
+color: #56147A;
+
+transform: rotate(6.05deg);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Row: 2 */
+
+width: 38px;
+height: 18px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 11.7104px;
+line-height: 18px;
+/* identical to box height */
+text-align: center;
+
+color: #56147A;
+
+transform: rotate(6.05deg);
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 14 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 9.01px;
+
+width: 71px;
+height: 45.01px;
+
+transform: rotate(6.05deg);
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Time: 6 p.m. */
+
+width: 71px;
+height: 18px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 11.7104px;
+line-height: 18px;
+/* identical to box height */
+text-align: center;
+
+color: #56147A;
+
+transform: rotate(6.05deg);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Seats: 9 , 10 */
+
+width: 66px;
+height: 18px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 11.7104px;
+line-height: 18px;
+/* identical to box height */
+text-align: center;
+
+color: #56147A;
+
+transform: rotate(6.05deg);
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Code barre */
+
+width: 165.43px;
+height: 43.24px;
+
+transform: rotate(6.05deg);
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Code Barre */
+
+position: absolute;
+width: 165.43px;
+height: 43.24px;
+left: 4.56px;
+top: 0px;
+
+transform: rotate(6.05deg);
+
+
+/* Rectangle 69 */
+
+position: absolute;
+width: 2.7px;
+height: 43.24px;
+left: 4.56px;
+top: 0px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 70 */
+
+position: absolute;
+width: 1.8px;
+height: 43.24px;
+left: 8.68px;
+top: 0.44px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 71 */
+
+position: absolute;
+width: 1.8px;
+height: 43.24px;
+left: 12.8px;
+top: 0.87px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 72 */
+
+position: absolute;
+width: 1.8px;
+height: 43.24px;
+left: 20.53px;
+top: 1.69px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 74 */
+
+position: absolute;
+width: 0.9px;
+height: 43.24px;
+left: 33.93px;
+top: 3.11px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 75 */
+
+position: absolute;
+width: 0.9px;
+height: 43.24px;
+left: 37.02px;
+top: 3.44px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 76 */
+
+position: absolute;
+width: 4.5px;
+height: 43.24px;
+left: 39.6px;
+top: 3.71px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 77 */
+
+position: absolute;
+width: 2.7px;
+height: 43.24px;
+left: 48.36px;
+top: 4.64px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 78 */
+
+position: absolute;
+width: 0.9px;
+height: 43.24px;
+left: 53px;
+top: 5.13px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 79 */
+
+position: absolute;
+width: 4.5px;
+height: 43.24px;
+left: 57.12px;
+top: 5.57px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 80 */
+
+position: absolute;
+width: 2.7px;
+height: 43.24px;
+left: 63.31px;
+top: 6.23px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 81 */
+
+position: absolute;
+width: 2.7px;
+height: 43.24px;
+left: 68.97px;
+top: 6.83px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 82 */
+
+position: absolute;
+width: 3.6px;
+height: 43.24px;
+left: 75.16px;
+top: 7.48px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 83 */
+
+position: absolute;
+width: 0.9px;
+height: 43.24px;
+left: 80.83px;
+top: 8.08px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 84 */
+
+position: absolute;
+width: 0.9px;
+height: 43.24px;
+left: 84.95px;
+top: 8.52px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 85 */
+
+position: absolute;
+width: 0.9px;
+height: 43.24px;
+left: 91.13px;
+top: 9.18px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 86 */
+
+position: absolute;
+width: 2.7px;
+height: 43.24px;
+left: 94.23px;
+top: 9.5px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 87 */
+
+position: absolute;
+width: 2.7px;
+height: 43.24px;
+left: 101.44px;
+top: 10.27px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 88 */
+
+position: absolute;
+width: 4.5px;
+height: 43.24px;
+left: 107.11px;
+top: 10.87px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 89 */
+
+position: absolute;
+width: 1.8px;
+height: 43.24px;
+left: 114.33px;
+top: 11.63px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 90 */
+
+position: absolute;
+width: 1.8px;
+height: 43.24px;
+left: 117.42px;
+top: 11.96px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 91 */
+
+position: absolute;
+width: 3.6px;
+height: 43.24px;
+left: 122.06px;
+top: 12.45px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 92 */
+
+position: absolute;
+width: 2.7px;
+height: 43.24px;
+left: 127.72px;
+top: 13.05px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 93 */
+
+position: absolute;
+width: 5.4px;
+height: 43.24px;
+left: 133.39px;
+top: 13.65px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 94 */
+
+position: absolute;
+width: 0.9px;
+height: 43.24px;
+left: 141.12px;
+top: 14.47px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 95 */
+
+position: absolute;
+width: 0.9px;
+height: 43.24px;
+left: 143.7px;
+top: 14.75px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 96 */
+
+position: absolute;
+width: 2.7px;
+height: 43.24px;
+left: 149.88px;
+top: 15.4px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 97 */
+
+position: absolute;
+width: 4.5px;
+height: 43.24px;
+left: 157.1px;
+top: 16.17px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 98 */
+
+position: absolute;
+width: 1.8px;
+height: 43.24px;
+left: 162.77px;
+top: 16.77px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 99 */
+
+position: absolute;
+width: 2.7px;
+height: 43.24px;
+left: 166.37px;
+top: 17.15px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Rectangle 73 */
+
+position: absolute;
+width: 5.4px;
+height: 43.24px;
+left: 23.62px;
+top: 2.02px;
+
+background: #000000;
+border: 0.259115px solid rgba(0, 0, 0, 0.6);
+transform: rotate(6.05deg);
+
+
+/* Doctor Stran-ge in the Multiverse of Madness */
+
+position: absolute;
+width: 165.75px;
+height: 39.64px;
+left: 71.17px;
+top: -272.79px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 13.512px;
+line-height: 20px;
+text-align: center;
+
+color: rgba(255, 255, 255, 0.87);
+
+transform: rotate(6.05deg);
+
+
+/* photo 2 */
+
+position: absolute;
+width: 225px;
+height: 414px;
+left: 0px;
+top: 33px;
+
+transform: rotate(-6.05deg);
+
+
+/* Ticket */
+
+position: absolute;
+width: 225px;
+height: 414px;
+left: 0px;
+top: 23.71px;
+
+transform: rotate(-6.05deg);
+
+
+/* Stroke */
+
+position: absolute;
+width: 225px;
+height: 414px;
+left: 0px;
+top: 23.71px;
+
+border: 1.8px solid rgba(255, 255, 255, 0.3);
+transform: rotate(-6.05deg);
+
+
+/* Base */
+
+position: absolute;
+width: 225px;
+height: 414px;
+left: 0px;
+top: 23.71px;
+
+background: #C4C4C4;
+transform: rotate(-6.05deg);
+
+
+/* Image */
+
+position: absolute;
+width: 225px;
+height: 414px;
+left: 0px;
+top: 23.71px;
+
+background: url(e081c5040f69633e2ca28238fb5ed860.jpg);
+transform: rotate(-6.05deg);
+
+
+/* photo 1 */
+
+position: absolute;
+width: 250px;
+height: 460px;
+left: 51.18px;
+top: 0px;
+
+
+
+/* Ticket */
+
+position: absolute;
+width: 250.82px;
+height: 461.5px;
+left: 0px;
+top: 0px;
+
+
+
+/* Stroke */
+
+position: absolute;
+visibility: hidden;
+width: 250.82px;
+height: 461.5px;
+left: 0px;
+top: 0px;
+
+
+
+/* Base */
+
+position: absolute;
+visibility: hidden;
+width: 250.82px;
+height: 461.5px;
+left: 0px;
+top: 0px;
+
+background: #C4C4C4;
+
+
+/* Image */
+
+position: absolute;
+width: 250.82px;
+height: 461.5px;
+left: 0px;
+top: 0px;
+
+background: url(Thor_AIW_Profile.png);
+
+
+/* Rectangle 663 */
+
+position: absolute;
+visibility: hidden;
+width: 251px;
+height: 134px;
+left: -0.18px;
+top: 328.5px;
+
+background: rgba(255, 255, 255, 0.6);
+
+
+/* Separator */
+
+position: absolute;
+visibility: hidden;
+width: 200px;
+height: 0px;
+left: 30.82px;
+top: 329.51px;
+
+border: 2px dashed rgba(0, 0, 0, 0.6);
+transform: rotate(0deg);
