@@ -40,9 +40,4 @@ class MainActivity : AppCompatActivity() {
         // set default value;
         findViewById<BottomNavigationView>(R.id.bottom_navigation).selectedItemId = R.id.action_play
     }
-
-    companion object {
-        private const val NOW_PLAYING = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"
-        private const val TAG = "MainActivity"
-    }
 }
