@@ -6,14 +6,18 @@
         <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/drawable/ic_background.xml" value="0.2265" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/drawable/ic_bg.xml" value="0.2265" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/drawable/ic_gradient.xml" value="0.2265" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/drawable/ic_search.xml" value="0.1215" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/drawable/placeholde_background.xml" value="0.2225" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/layout-land/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/layout/activity_detail.xml" value="0.25" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/layout/activity_main_land.xml" value="0.16" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/layout/activity_search.xml" value="0.24635416666666668" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/layout/activity_splash.xml" value="0.25" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/layout/fragment_now_playing.xml" value="0.2" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/layout/fragment_now_trending.xml" value="0.25" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/layout/fragment_now_upcoming.xml" value="0.25" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/layout/fragment_now_playing.xml" value="0.4" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/layout/fragment_now_trending.xml" value="0.1" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/layout/fragment_now_upcoming.xml" value="0.1" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/layout/fragment_search.xml" value="0.24635416666666668" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/layout/fragment_upcoming.xml" value="0.25" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/layout/item_movie.xml" value="0.25" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Flixster/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.25" />
