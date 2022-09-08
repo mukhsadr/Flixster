@@ -34,7 +34,7 @@ Flixster is a movie browsing app to see a list of trending, currently playing an
 - [x] User can view a list of movies (title, poster image, and overview) currently playing in theaters from the Movie Database API.
    - [x] Making an API request.
    - [x] Parsing JSON.
-   - [x] Implementating RecyclerView.
+   - [x] Implementation RecyclerView.
    - [x] Using the AsyncHttpClient and the Glide libraries to handle newtwork requests and displaying movie poster images.
 - [x] Expose details of movie (ratings using RatingBar, popularity, and synopsis) in a separate activity.
    - [x]  Assignment Intro - Activities & Intents.
