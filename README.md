@@ -80,9 +80,6 @@ Flixster is a movie browsing app to see a list of trending, currently playing an
 ## Wireframes
 <img src="https://github.com/msadriddinov1994gmailcom/Flixster/blob/master/Images/Diagram.png" width=600>
 
-### [BONUS] Digital Wireframes & Mockups
-
-
 ### [BONUS] Interactive Prototype
 <img src="https://github.com/mukhsadr/Flixster/blob/main/Images/ezgif.com-gif-maker.gif" width=300>
 
@@ -127,3 +124,6 @@ Flixster is a movie browsing app to see a list of trending, currently playing an
       - (Read/GET) Query all movies which are trending at theatre.
       - (Read/GET) Query all movies which are upcoming at theatre.
 
+### [BONUS] Digital Wireframes & Mockups
+
+<img src="https://github.com/msadriddinov1994gmailcom/Flixster/blob/master/Images/Screen%201%20-%20Splash.jpg" width=300>   <img src="https://github.com/msadriddinov1994gmailcom/Flixster/blob/master/Images/Screen%202%20-%20Main%20Activity.jpg" width=300>   <img src="https://github.com/msadriddinov1994gmailcom/Flixster/blob/master/Images/Screen%203%20-%20Details.jpg" width=300>
