@@ -1,14 +1,13 @@
 package com.example.flixster
 
-
-import com.example.flixster.Fragments.NowPlaying
-import com.example.flixster.Fragments.NowTrending
-import com.example.flixster.Fragments.NowUpcoming
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 
+import com.example.flixster.Fragments.NowPlaying
+import com.example.flixster.Fragments.NowTrending
+import com.example.flixster.Fragments.NowUpcoming
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -30,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                 else -> NowPlaying()
             }
             fragmentManager.beginTransaction()
-                .replace(R.id.flContainer, fragmentToShow)
+                .replace(R.id.fragment_container, fragmentToShow)
                 .commit()
             true
         }

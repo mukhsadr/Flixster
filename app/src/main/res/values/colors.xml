@@ -12,4 +12,6 @@
     <color name="centerColor">#140B2F</color>
     <color name="endColor">#140B2F</color>
     <color name="grey">#B4AEC6</color>
+    <color name="bottom_nav_item_color_selected">#FFBB86FC</color>
+    <color name="bottom_nav_item_color_unselected">#B4AEC6</color>
 </resources>
