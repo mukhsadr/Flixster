@@ -18,11 +18,11 @@ import com.example.flixster.R
 import okhttp3.Headers
 import org.json.JSONException
 
+private const val apiUrl = "https://api.themoviedb.org/3/movie/upcoming?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"
 
-class NowUpcoming : Fragment() {
-
-    private val movies2 = mutableListOf<Movie>()
-    private lateinit var rvMovies2: RecyclerView
+class NowUpcoming : BaseMovieFragment(apiUrl) {
+    override val apiUrl: String
+        get() = "https://api.themoviedb.org/3/movie/upcoming?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,54 +32,6 @@ class NowUpcoming : Fragment() {
         return inflater.inflate(R.layout.fragment_now_upcoming, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        rvMovies2 = view.findViewById(R.id.rvMovies)
-        val movieAdapter2 = MovieAdapter(requireContext(), movies2)
-        rvMovies2.adapter = movieAdapter2
-        rvMovies2.layoutManager = LinearLayoutManager(requireContext())
-        val client = AsyncHttpClient()
-        client.get(NOW_PLAYING, object : JsonHttpResponseHandler(){
-            override fun onFailure(statusCode: Int, headers: Headers?, response: String?, throwable: Throwable?
-            ) {
-                Log.e(TAG, "onFailure.")
-            }
-
-            override fun onSuccess(statusCode: Int, headers: Headers?, json: JSON) {
-                try {
-                    Log.i(TAG, "onSuccess. $statusCode")
-                    val movieJsonArray = json.jsonObject.getJSONArray("results")
-                    movies2.addAll(Movie.fromJsonArray(movieJsonArray))
-                    movieAdapter2.notifyDataSetChanged()
-                }
-                catch (e: JSONException) { Log.e(TAG, "Encountered exception $e.") }
-            }
-
-        })
-        view.findViewById<Button>(R.id.btn_search).setOnClickListener(){
-            val text = view.findViewById<EditText>(R.id.et_search).text.toString()
-            val URL = "https://api.themoviedb.org/3/search/movie?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&language=en-US&query=" + text + "&page=1&include_adult=false"
-            client.get(URL, object : JsonHttpResponseHandler(){
-                override fun onFailure(statusCode: Int, headers: Headers?, response: String?, throwable: Throwable?
-                ) {
-                    Log.e(TAG, "onFailure.")
-                }
-
-                override fun onSuccess(statusCode: Int, headers: Headers?, json: JSON) {
-                    try {
-                        Log.i(TAG, "onSuccess. $statusCode")
-                        val movieJsonArray = json.jsonObject.getJSONArray("results")
-                        movies2.clear()
-                        movies2.addAll(Movie.fromJsonArray(movieJsonArray))
-                        movieAdapter2.notifyDataSetChanged()
-                    }
-                    catch (e: JSONException) { Log.e(TAG, "Encountered exception $e.") }
-                }
-
-            })
-        }
-    }
 
     companion object {
         private const val TAG = "NowPlaying"
