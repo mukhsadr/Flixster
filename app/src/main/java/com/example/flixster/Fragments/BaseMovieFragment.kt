@@ -21,8 +21,10 @@ import org.json.JSONException
 abstract class BaseMovieFragment(apiUrl: String) : Fragment() {
 
     private val movies = mutableListOf<Movie>()
-    private lateinit var rvMovies: RecyclerView
+    lateinit var rvMovies: RecyclerView
     private lateinit var movieAdapter: MovieAdapter
+    private var _binding: NowPlaying? = null
+    val binding get() = _binding!!
 
     abstract val apiUrl: String
 
@@ -42,8 +44,9 @@ abstract class BaseMovieFragment(apiUrl: String) : Fragment() {
         rvMovies.adapter = movieAdapter
         rvMovies.layoutManager = LinearLayoutManager(requireContext())
         val client = AsyncHttpClient()
-        client.get(apiUrl, object : JsonHttpResponseHandler(){
-            override fun onFailure(statusCode: Int, headers: Headers?, response: String?, throwable: Throwable?
+        client.get(apiUrl, object : JsonHttpResponseHandler() {
+            override fun onFailure(
+                statusCode: Int, headers: Headers?, response: String?, throwable: Throwable?
             ) {
                 Log.e(TAG, "onFailure.")
             }
@@ -54,12 +57,12 @@ abstract class BaseMovieFragment(apiUrl: String) : Fragment() {
                     val movieJsonArray = json.jsonObject.getJSONArray("results")
                     movies.addAll(Movie.fromJsonArray(movieJsonArray))
                     movieAdapter.notifyDataSetChanged()
+                } catch (e: JSONException) {
+                    Log.e(TAG, "Encountered exception $e.")
                 }
-                catch (e: JSONException) { Log.e(TAG, "Encountered exception $e.") }
             }
 
         })
-
     }
 
     companion object {
