@@ -1,10 +1,12 @@
 package com.example.flixster
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
@@ -23,12 +25,12 @@ import org.json.JSONObject
 class MainActivity : AppCompatActivity() {
 
     private lateinit var fragmentManager: FragmentManager
-    private lateinit var searchView: SearchView
     private lateinit var client: AsyncHttpClient
     private lateinit var movies: MutableList<Movie>
     private lateinit var movieAdapter: MovieAdapter
     private val TAG = "MainActivity"
 
+    @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -53,11 +55,11 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.selectedItemId = R.id.action_play
 
         // Set up search view
-        searchView = findViewById(R.id.search_view)
+        val searchView = findViewById<SearchView>(R.id.search_view)
         client = AsyncHttpClient()
         movies = mutableListOf()
         movieAdapter = MovieAdapter(this, movies)
-
+        searchView.queryHint = "Search movies..."
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 query?.let { searchMovie(it) }
@@ -94,16 +96,17 @@ class MainActivity : AppCompatActivity() {
                     // Update the RecyclerView in the currently displayed fragment
                     val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
                     if (currentFragment is NowPlaying) {
-                        currentFragment.rvMovies.adapter = movieAdapter
+                        currentFragment.binding.rvMovies.adapter = movieAdapter
                     } else if (currentFragment is NowTrending) {
-                        currentFragment.rvMovies.adapter = movieAdapter
+                        currentFragment.binding.rvMovies.adapter = movieAdapter
                     } else if (currentFragment is NowUpcoming) {
-                        currentFragment.rvMovies.adapter = movieAdapter
+                        currentFragment.binding.rvMovies.adapter = movieAdapter
                     }
                 } catch (e: JSONException) {
                     Log.e(TAG, "Encountered exception $e.")
                 }
             }
+
         })
     }
 }

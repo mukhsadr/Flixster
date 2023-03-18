@@ -31,23 +31,35 @@
         app:menu="@menu/menu_bottom_navigation" />
 
     <!-- Search toolbar -->
-    <com.google.android.material.appbar.MaterialToolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/search_toolbar"
-        style="@style/Widget.MaterialComponents.BottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/white"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/black">
 
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/search_view"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:focusable="true"
-            android:iconifiedByDefault="false"
-            app:queryHint="Search" />
+            android:layout_height="match_parent">
 
-    </com.google.android.material.appbar.MaterialToolbar>
+
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:iconifiedByDefault="false"
+                android:queryHint="Search..."
+                app:defaultQueryHint="Search..."
+                app:iconifiedByDefault="false"
+                app:queryHint="Search..." />
+
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
 
 
 
