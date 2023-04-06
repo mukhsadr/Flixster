@@ -1,17 +1,32 @@
 package com.example.flixster
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.RatingBar
-import android.widget.TextView
+import android.util.Log
+import android.view.View
+import android.widget.*
 import com.bumptech.glide.Glide
+import com.codepath.asynchttpclient.AsyncHttpClient
+import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
+import com.google.android.youtube.player.YouTubeBaseActivity
+import com.google.android.youtube.player.YouTubeInitializationResult
+import com.google.android.youtube.player.YouTubePlayer
+import com.google.android.youtube.player.YouTubePlayerView
+import okhttp3.Headers
+import okhttp3.internal.notifyAll
+import java.io.ObjectOutputStream
 
-class DetailActivity : AppCompatActivity() {
+private const val YOUTUBE_API_KEY = "AIzaSyDhu35CJFcqScdG7RZmf6DAHhx58Yef-ks"
+private const val TRAILER_URL = "https://api.themoviedb.org/3/movie/%d/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"
+
+class DetailActivity : YouTubeBaseActivity() {
     private lateinit var tvTitle: TextView
     private lateinit var tvOverview: TextView
     private lateinit var rbVoteAverage: RatingBar
     private lateinit var ivPoster: ImageView
+    private lateinit var btnSave: Button
+    private lateinit var ytPlayerView: YouTubePlayerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +36,8 @@ class DetailActivity : AppCompatActivity() {
         tvOverview = findViewById(R.id.tvOverview)
         rbVoteAverage = findViewById(R.id.rbVoteAverage)
         ivPoster = findViewById(R.id.ivPoster)
+        btnSave = findViewById(R.id.btn_save)
+        ytPlayerView = findViewById(R.id.player)
 
         val movie = intent.getParcelableExtra<Movie>(MOVIE_EXTRA) as Movie
         tvTitle.text = movie.title
@@ -28,6 +45,86 @@ class DetailActivity : AppCompatActivity() {
         rbVoteAverage.rating = movie.voteAverage.toFloat()
         Glide.with(this).load(movie.posterImageUrl).into(ivPoster)
 
+        var client = AsyncHttpClient()
+        client.get(TRAILER_URL.format(movie.movieId), object :JsonHttpResponseHandler(){
+            override fun onFailure(
+                statusCode: Int,
+                headers: Headers?,
+                response: String?,
+                throwable: Throwable?
+            ) {
+                Log.e(TAG, "onFailure $statusCode")
+            }
+
+            override fun onSuccess(statusCode: Int, headers: Headers?, json: JSON) {
+                Log.i(TAG, "onSuccess")
+                val results = json.jsonObject.getJSONArray("results")
+                if (results.length() > 0) {
+                    val youtube_key = results.getJSONObject(0).getString("key")
+                    ytPlayerView.visibility = View.VISIBLE
+                    ivPoster.visibility = View.GONE
+                    initializeYouTube(youtube_key)
+                } else {
+                    ytPlayerView.visibility = View.GONE
+                    Glide.with(this@DetailActivity).load(movie.posterImageUrl).into(ivPoster)
+                    ivPoster.visibility = View.VISIBLE
+                }
+            }
+        })
+
+
+        val isSaved = MovieStorage.containsMovie(this, movie)
+        updateButtonState(isSaved)
+        btnSave.setOnClickListener {
+            val isSaved = MovieStorage.containsMovie(this, movie)
+            if (isSaved) {
+                MovieStorage.removeMovie(this, movie)
+                saveMoviesToLocalMemory(MovieStorage.getMovies(this))
+                Toast.makeText(this, "Removed from Bookmarks", Toast.LENGTH_SHORT).show()
+            } else {
+                MovieStorage.saveMovie(this, movie)
+                saveMoviesToLocalMemory(MovieStorage.getMovies(this))
+                Toast.makeText(this, "Added to Bookmarks", Toast.LENGTH_SHORT).show()
+            }
+            updateButtonState(!isSaved)
+        }
+    }
+
+    private fun initializeYouTube(youtubeKey: String) {
+        ytPlayerView.initialize(YOUTUBE_API_KEY, object :YouTubePlayer.OnInitializedListener{
+            override fun onInitializationSuccess(
+                provider: YouTubePlayer.Provider?,
+                player: YouTubePlayer?,
+                p2: Boolean
+            ) {
+                Log.i(TAG, "onInitializationSuccess")
+                player?.cueVideo(youtubeKey)
+            }
+
+            override fun onInitializationFailure(
+                p0: YouTubePlayer.Provider?,
+                p1: YouTubeInitializationResult?
+            ) {
+                Log.e(TAG, "onInitializationFailure")
+            }
+
+        })
+    }
+
+    private fun updateButtonState(isSaved: Boolean) {
+        btnSave.text = if (isSaved) "Remove from Bookmarks" else "Add to Bookmarks"
+    }
+
+    private fun saveMoviesToLocalMemory(movies: List<Movie>) {
+        try {
+            val fileOutput = applicationContext.openFileOutput("saved_movies", Context.MODE_PRIVATE)
+            val outputStream = ObjectOutputStream(fileOutput)
+            outputStream.writeObject(movies)
+            outputStream.close()
+            fileOutput.close()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     companion object {

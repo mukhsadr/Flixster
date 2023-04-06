@@ -16,11 +16,13 @@ import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import com.example.flixster.Fragments.NowPlaying
 import com.example.flixster.Fragments.NowTrending
 import com.example.flixster.Fragments.NowUpcoming
+import com.example.flixster.Fragments.SavedMoviesFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import okhttp3.Headers
 import okhttp3.internal.http2.Header
 import org.json.JSONException
 import org.json.JSONObject
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,6 +45,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.action_play -> NowPlaying()
                 R.id.action_trend -> NowTrending()
                 R.id.action_upcome -> NowUpcoming()
+                R.id.action_saved_movies -> SavedMoviesFragment()
                 else -> NowPlaying()
             }
             fragmentManager.beginTransaction()

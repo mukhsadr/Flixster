@@ -9,6 +9,7 @@
     android:orientation="vertical"
     android:background="@color/background">
 
+
     <TextView
         android:id="@+id/tvTitle"
         android:padding="16dp"
@@ -22,17 +23,31 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Movie Title"/>
 
-    <ImageView
-        android:id="@+id/ivPoster"
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="2dp"
-        android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/bg_detail"/>
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.youtube.player.YouTubePlayerView
+            android:id="@+id/player"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/ivPoster"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:visibility="visible"
+            app:srcCompat="@drawable/bg_detail"/>
+
+    </FrameLayout>
 
     <RatingBar
         android:id="@+id/rbVoteAverage"
@@ -43,8 +58,8 @@
         android:numStars="10"
         android:rating="8.3"
         android:stepSize="0.1"
-        app:layout_constraintTop_toBottomOf="@+id/ivPoster"
-        app:layout_constraintStart_toStartOf="@+id/ivPoster"/>
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintStart_toStartOf="@+id/frameLayout"/>
 
     <TextView
         android:id="@+id/tvOverview"
@@ -58,7 +73,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOverview" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
