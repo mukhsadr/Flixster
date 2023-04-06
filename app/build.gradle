@@ -8,6 +8,10 @@ plugins {
 android {
     compileSdk 32
 
+    dataBinding {
+        enabled = true
+    }
+
     defaultConfig {
         applicationId "com.example.flixster"
         minSdk 21
@@ -48,6 +52,8 @@ dependencies {
     // Glide for remote image loading
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     implementation 'com.google.android.material:material:1.4.0'
+    implementation 'com.google.code.gson:gson:2.8.9'
+
 
 
 }
