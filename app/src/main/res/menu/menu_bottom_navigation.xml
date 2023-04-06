@@ -16,4 +16,11 @@
         android:icon="@drawable/ic_upcoming"
         android:title="Upcoming"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_saved_movies"
+        android:icon="@drawable/ic_save"
+        android:title="Saved Movies"
+        app:showAsAction="always" />
+
 </menu>
