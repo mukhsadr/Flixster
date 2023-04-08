@@ -45,19 +45,20 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:visibility="visible"
-            app:srcCompat="@drawable/bg_detail"/>
+            app:srcCompat="@drawable/bg_detail"
+            android:contentDescription="@string/moviePosterImage"/>
 
     </FrameLayout>
 
     <RatingBar
         android:id="@+id/rbVoteAverage"
-        android:padding="16dp"
+        android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:isIndicator="true"
         android:numStars="10"
-        android:rating="8.3"
-        android:stepSize="0.1"
+        android:rating="10"
+        android:stepSize="1"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
         app:layout_constraintStart_toStartOf="@+id/frameLayout"/>
 
@@ -65,24 +66,24 @@
         android:id="@+id/tvOverview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:maxLines="9"
         android:padding="16dp"
-        android:text="Movie Overview"
-        android:textSize="18sp"
+        android:text="@string/movieOverview"
         android:textColor="#999999"
-        app:layout_constraintTop_toBottomOf="@id/rbVoteAverage"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/rbVoteAverage" />
 
     <Button
         android:id="@+id/btn_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="@string/button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvOverview" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

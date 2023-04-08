@@ -4,4 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="overview_placeholder">Movie Description…</string>
     <string name="search">search</string>
+    <string name="movieOverview">Movie Overview</string>
+    <string name="button">Button</string>
+    <string name="moviePosterImage">Movie Image Poster</string>
 </resources>
