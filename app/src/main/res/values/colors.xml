@@ -18,7 +18,7 @@
     <color name="divider">#FFC4C4C4</color>
     <color name="title_text">#333333</color>
     <color name="body_text">#666666</color>
-
+    <color name="semi_transparent">#80000000</color>
     <style name="AppTheme" parent="Theme.MaterialComponents.Light">
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>

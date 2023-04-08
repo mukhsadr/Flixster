@@ -25,6 +25,7 @@ class DetailActivity : YouTubeBaseActivity() {
     private lateinit var tvOverview: TextView
     private lateinit var rbVoteAverage: RatingBar
     private lateinit var ivPoster: ImageView
+    private lateinit var ivBackDrop: ImageView
     private lateinit var btnSave: Button
     private lateinit var ytPlayerView: YouTubePlayerView
 
@@ -34,16 +35,17 @@ class DetailActivity : YouTubeBaseActivity() {
 
         tvTitle = findViewById(R.id.tvTitle)
         tvOverview = findViewById(R.id.tvOverview)
-        rbVoteAverage = findViewById(R.id.rbVoteAverage)
         ivPoster = findViewById(R.id.ivPoster)
+        ivBackDrop = findViewById(R.id.ivBackDrop)
         btnSave = findViewById(R.id.btn_save)
         ytPlayerView = findViewById(R.id.player)
 
         val movie = intent.getParcelableExtra<Movie>(MOVIE_EXTRA) as Movie
         tvTitle.text = movie.title
         tvOverview.text = movie.overview
-        rbVoteAverage.rating = movie.voteAverage.toFloat()
         Glide.with(this).load(movie.posterImageUrl).into(ivPoster)
+        Glide.with(this).load(movie.backdropImageUrl).into(ivBackDrop)
+
 
         var client = AsyncHttpClient()
         client.get(TRAILER_URL.format(movie.movieId), object :JsonHttpResponseHandler(){
@@ -98,6 +100,7 @@ class DetailActivity : YouTubeBaseActivity() {
                 p2: Boolean
             ) {
                 Log.i(TAG, "onInitializationSuccess")
+                player?.setPlayerStyle(YouTubePlayer.PlayerStyle.MINIMAL)
                 player?.cueVideo(youtubeKey)
             }
 

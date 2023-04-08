@@ -6,84 +6,110 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/background">
+    android:orientation="vertical">
 
-
-    <TextView
-        android:id="@+id/tvTitle"
-        android:padding="16dp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/title_text"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <ImageView
+        android:id="@+id/ivBackDrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/item_background"
+        android:contentDescription="@string/movieBackgroundImage"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Movie Title"/>
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:elevation="-1dp"
+        android:background="@drawable/gradient_tint"
+        android:alpha="0.5"/>
 
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivBackDrop">
 
         <com.google.android.youtube.player.YouTubePlayerView
             android:id="@+id/player"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:scaleType="centerCrop"
             android:visibility="gone" />
 
         <ImageView
             android:id="@+id/ivPoster"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="403dp"
+            android:contentDescription="@string/moviePosterImage"
             android:scaleType="centerCrop"
             android:visibility="visible"
-            app:srcCompat="@drawable/bg_detail"
-            android:contentDescription="@string/moviePosterImage"/>
+            app:srcCompat="@drawable/ic_play" />
 
     </FrameLayout>
 
-    <RatingBar
-        android:id="@+id/rbVoteAverage"
-        android:padding="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:isIndicator="true"
-        android:numStars="10"
-        android:rating="10"
-        android:stepSize="1"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-        app:layout_constraintStart_toStartOf="@+id/frameLayout"/>
-
     <TextView
-        android:id="@+id/tvOverview"
-        android:layout_width="match_parent"
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:maxLines="9"
+        android:background="@color/semi_transparent"
+        android:alpha="0.9"
         android:padding="16dp"
-        android:text="@string/movieOverview"
-        android:textColor="#999999"
-        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rbVoteAverage" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Movie Title" />
 
-    <Button
-        android:id="@+id/btn_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/item_background"
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/tvOverview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_save"
+            android:alpha="0.8"
+            android:maxLines="9"
+            android:shadowColor="@color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:text="@string/movieOverview"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="2dp"
+            android:text="@string/button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

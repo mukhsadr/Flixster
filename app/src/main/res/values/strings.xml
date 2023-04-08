@@ -7,4 +7,8 @@
     <string name="movieOverview">Movie Overview</string>
     <string name="button">Button</string>
     <string name="moviePosterImage">Movie Image Poster</string>
+    <string name="sonic_2">Sonic 2</string>
+    <string name="overview">Overview</string>
+    <string name="todo">TODO</string>
+    <string name="movieBackgroundImage">Backdropdown</string>
 </resources>
