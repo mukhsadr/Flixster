@@ -1,5 +1,6 @@
 package com.example.flixster
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
@@ -14,6 +15,7 @@ import com.google.android.youtube.player.YouTubePlayer
 import com.google.android.youtube.player.YouTubePlayerView
 import okhttp3.Headers
 import java.io.ObjectOutputStream
+
 
 private const val YOUTUBE_API_KEY = "AIzaSyDhu35CJFcqScdG7RZmf6DAHhx58Yef-ks"
 private const val TRAILER_URL = "https://api.themoviedb.org/3/movie/%d/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"
@@ -30,6 +32,7 @@ class DetailActivity : YouTubeBaseActivity() {
     private lateinit var ytPlayerView: YouTubePlayerView
     private lateinit var rbVoteCount: RatingBar
 
+    @SuppressLint("CutPasteId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)

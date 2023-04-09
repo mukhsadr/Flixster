@@ -43,7 +43,7 @@
             app:layout_constraintStart_toEndOf="@+id/ivPoster"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <com.codesgood.views.JustifiedTextView
             android:id="@+id/tvOverview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

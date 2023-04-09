@@ -94,7 +94,7 @@
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="NotSibling">
 
-            <TextView
+            <com.codesgood.views.JustifiedTextView
                 android:id="@+id/tvOverview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

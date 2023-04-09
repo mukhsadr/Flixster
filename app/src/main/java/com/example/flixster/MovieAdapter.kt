@@ -32,7 +32,6 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
         private val tvTitle = itemView.findViewById<TextView>(R.id.tvTitle)
         private val tvOverview = itemView.findViewById<TextView>(R.id.tvOverview)
         private val ivPoster = itemView.findViewById<ImageView>(R.id.ivPoster)
-
         init {
             itemView.setOnClickListener(this)
         }
