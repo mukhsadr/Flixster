@@ -1,7 +1,6 @@
 package com.example.flixster
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -14,7 +13,6 @@ import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubePlayer
 import com.google.android.youtube.player.YouTubePlayerView
 import okhttp3.Headers
-import okhttp3.internal.notifyAll
 import java.io.ObjectOutputStream
 
 private const val YOUTUBE_API_KEY = "AIzaSyDhu35CJFcqScdG7RZmf6DAHhx58Yef-ks"
@@ -23,7 +21,9 @@ private const val TRAILER_URL = "https://api.themoviedb.org/3/movie/%d/videos?ap
 class DetailActivity : YouTubeBaseActivity() {
     private lateinit var tvTitle: TextView
     private lateinit var tvOverview: TextView
-    private lateinit var rbVoteAverage: RatingBar
+    private lateinit var tvVoteCount: TextView
+    private lateinit var tvReleaseDate: TextView
+    private lateinit var tvLang: TextView
     private lateinit var ivPoster: ImageView
     private lateinit var ivBackDrop: ImageView
     private lateinit var btnSave: Button
@@ -39,12 +39,18 @@ class DetailActivity : YouTubeBaseActivity() {
         ivBackDrop = findViewById(R.id.ivBackDrop)
         btnSave = findViewById(R.id.btn_save)
         ytPlayerView = findViewById(R.id.player)
+        tvReleaseDate = findViewById(R.id.tvReleaseDate)
+        tvLang = findViewById(R.id.tvLang)
+        tvVoteCount = findViewById(R.id.tvVoteCount)
 
         val movie = intent.getParcelableExtra<Movie>(MOVIE_EXTRA) as Movie
         tvTitle.text = movie.title
         tvOverview.text = movie.overview
         Glide.with(this).load(movie.posterImageUrl).into(ivPoster)
         Glide.with(this).load(movie.backdropImageUrl).into(ivBackDrop)
+        tvReleaseDate.text = movie.releaseDate+"__:______Released Date"
+        tvLang.text = movie.originalLanguage + "__:__Original Language"
+        tvVoteCount.text = movie.voteCount.toString() + "__:_________Vote Count"
 
 
         var client = AsyncHttpClient()
