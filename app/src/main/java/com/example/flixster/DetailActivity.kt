@@ -28,6 +28,7 @@ class DetailActivity : YouTubeBaseActivity() {
     private lateinit var ivBackDrop: ImageView
     private lateinit var btnSave: Button
     private lateinit var ytPlayerView: YouTubePlayerView
+    private lateinit var rbVoteCount: RatingBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +43,7 @@ class DetailActivity : YouTubeBaseActivity() {
         tvReleaseDate = findViewById(R.id.tvReleaseDate)
         tvLang = findViewById(R.id.tvLang)
         tvVoteCount = findViewById(R.id.tvVoteCount)
+        rbVoteCount = findViewById(R.id.rbVoteCount)
 
         val movie = intent.getParcelableExtra<Movie>(MOVIE_EXTRA) as Movie
         tvTitle.text = movie.title
@@ -51,6 +53,7 @@ class DetailActivity : YouTubeBaseActivity() {
         tvReleaseDate.text = movie.releaseDate+"__:______Released Date"
         tvLang.text = movie.originalLanguage + "__:__Original Language"
         tvVoteCount.text = movie.voteCount.toString() + "__:_________Vote Count"
+        rbVoteCount.rating = movie.voteAverage.toFloat()
 
 
         var client = AsyncHttpClient()
