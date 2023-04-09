@@ -30,7 +30,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:alpha="0.9"
-        android:background="@color/semi_transparent"
+        android:background="@drawable/item_background"
         android:padding="16dp"
         android:textColor="@color/white"
         android:textSize="24sp"
@@ -58,11 +58,11 @@
         <ImageView
             android:id="@+id/ivPoster"
             android:layout_width="match_parent"
-            android:layout_height="403dp"
+            android:layout_height="300dp"
             android:contentDescription="@string/moviePosterImage"
             android:scaleType="centerCrop"
             android:visibility="visible"
-            app:srcCompat="@drawable/ic_play" />
+            tools:srcCompat="@tools:sample/avatars" />
 
     </FrameLayout>
 
@@ -85,70 +85,26 @@
             android:layout_height="match_parent"
             android:layout_above="@+id/bottomLayout"
             android:layout_below="@id/tvTitle"
-            android:padding="16dp"
+            android:padding="2dp"
             app:layout_constraintBottom_toTopOf="@+id/tvOverview"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.254"
+            app:layout_constraintVertical_bias="0.0"
             tools:ignore="NotSibling">
-
-            <TextView
-                android:id="@+id/tvReleaseDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:paddingTop="10dp"
-                android:textAlignment="textEnd"
-                android:textColor="@color/divider"
-                android:textSize="12sp"
-                android:textStyle="normal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvOverview"
-                tools:text="2023-05-01" />
-
-            <TextView
-                android:id="@+id/tvVoteCount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:paddingTop="3dp"
-                android:textAlignment="textEnd"
-                android:textColor="@color/divider"
-                android:textSize="12sp"
-                android:textStyle="normal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvLang"
-                tools:text="Vote Count" />
-
-            <TextView
-                android:id="@+id/tvLang"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@id/tvReleaseDate"
-                android:layout_alignParentEnd="true"
-                android:paddingTop="3dp"
-                android:textAlignment="textEnd"
-                android:textColor="@color/divider"
-                android:textSize="12sp"
-                android:textStyle="normal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvReleaseDate"
-                tools:text="Origin Lang" />
 
             <TextView
                 android:id="@+id/tvOverview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/btn_save"
+                android:layout_marginTop="10dp"
                 android:alpha="0.8"
+                android:background="@drawable/item_background"
+                android:gravity="fill_horizontal"
                 android:maxLines="9"
-                android:paddingTop="3dp"
+                android:padding="10dp"
                 android:shadowColor="@color/black"
                 android:shadowDx="1"
                 android:shadowDy="1"
@@ -166,24 +122,91 @@
                 android:layout_height="wrap_content"
                 android:alpha="0.5"
                 android:background="@drawable/item_background"
-                android:paddingTop="3dp"
+                android:isIndicator="true"
+                android:numStars="10"
+                android:outlineAmbientShadowColor="@color/semi_transparent"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:rating="10"
+                android:stepSize="1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <RelativeLayout
+                android:id="@+id/extraInfoFrameLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.5"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:shadowColor="@color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="1"
+                android:background="@drawable/item_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.333"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOverview">
 
-        <Button
-            android:id="@+id/btn_save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="2dp"
-            android:text="@string/button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+                <TextView
+                    android:id="@+id/tvReleaseDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/divider"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    tools:text="Date" />
+
+                <TextView
+                    android:id="@+id/tvVoteCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvReleaseDate"
+                    android:layout_alignStart="@id/tvReleaseDate"
+                    android:layout_alignEnd="@id/tvReleaseDate"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/divider"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    tools:text="Vote" />
+
+                <TextView
+                    android:id="@+id/tvLang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvVoteCount"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/divider"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    tools:text="Lang" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="142dp"
+                android:layout_marginEnd="141dp"
+                android:text="@string/button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

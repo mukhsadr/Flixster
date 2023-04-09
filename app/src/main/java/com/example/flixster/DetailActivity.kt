@@ -48,11 +48,18 @@ class DetailActivity : YouTubeBaseActivity() {
         val movie = intent.getParcelableExtra<Movie>(MOVIE_EXTRA) as Movie
         tvTitle.text = movie.title
         tvOverview.text = movie.overview
-        Glide.with(this).load(movie.posterImageUrl).into(ivPoster)
-        Glide.with(this).load(movie.backdropImageUrl).into(ivBackDrop)
-        tvReleaseDate.text = movie.releaseDate+"__:______Released Date"
-        tvLang.text = movie.originalLanguage + "__:__Original Language"
-        tvVoteCount.text = movie.voteCount.toString() + "__:_________Vote Count"
+        Glide.with(this)
+            .load(movie.posterImageUrl)
+            .placeholder(R.drawable.ic_placeholder)
+            .into(ivPoster)
+
+        Glide.with(this)
+            .load(movie.backdropImageUrl)
+            .placeholder(R.drawable.ic_placeholder)
+            .into(ivBackDrop)
+        tvReleaseDate.text = "Released Date: " + movie.releaseDate
+        tvLang.text = "Original Lang : " + movie.originalLanguage
+        tvVoteCount.text = "Vote Count : " + movie.voteCount.toString()
         rbVoteCount.rating = movie.voteAverage.toFloat()
 
 
